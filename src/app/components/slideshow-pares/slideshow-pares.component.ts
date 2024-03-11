@@ -28,7 +28,7 @@ export class SlideshowParesComponent implements OnInit {
     this.cargarMas.emit();
   }
 
-  async verDetalle( id: string ) {
+  async verDetalle( id: any ) {
 
     const modal = await this.modalCtrl.create({
       component: DetalleComponent,

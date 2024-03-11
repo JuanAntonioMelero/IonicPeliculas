@@ -17,7 +17,7 @@ export class Tab2Page implements OnInit {
   ideas: string[] = ['Spiderman', 'Avenger', 'El señor de los anillos', 'La vida es bella'];
 
   constructor(private moviesService: MoviesService,
-    private modalCtrl: ModalController) { }
+              private modalCtrl: ModalController) { }
 
   ngOnInit() {
   }
@@ -29,14 +29,13 @@ export class Tab2Page implements OnInit {
       this.peliculas = [];
       return;
     }
-
     // console.log(valor);
     this.buscando = true;
 
     this.moviesService.buscarPeliculas( valor )
         .subscribe( resp => {
           console.log( resp );
-          //this.peliculas = resp['results'];
+          this.peliculas = resp['results'];
           this.buscando = false;
         });
   }

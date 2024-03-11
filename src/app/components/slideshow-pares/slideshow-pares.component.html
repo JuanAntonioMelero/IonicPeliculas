@@ -1,15 +1,14 @@
-<ion-slides [options]="slideOpts">
+<!-- <ion-slides [options]="slideOpts">
   <ion-slide *ngFor="let pares of peliculas | pares">
-    
+
     <ion-row>
-      
+
       <ion-col size="12" *ngFor="let pelicula of pares">
         <ion-card mode="md" (click)="verDetalle(pelicula.id)">
           <img class="poster"
                 [src]="pelicula.poster_path | imagen">
         </ion-card>
       </ion-col>
-
 
     </ion-row>
   </ion-slide>
@@ -25,4 +24,40 @@
       </ion-button>
   </ion-slide>
 
-</ion-slides>
+</ion-slides> -->
+
+<swiper-container
+
+>
+
+    <swiper-slide *ngFor="let slide of peliculas">
+
+
+      <ion-card mode="md" (click)="verDetalle(slide.id)">
+        <img [src]="slide.poster_path | imagen" class="slide-image" />
+
+        <ion-card-header>
+          <ion-card-subtitle>{{ slide.title }}</ion-card-subtitle>
+        </ion-card-header>
+
+        <!-- <ion-card-content>
+          {{ slide.desc }}
+        </ion-card-content> -->
+
+      </ion-card>
+
+
+
+    </swiper-slide>
+
+  <swiper-slide  class="slide-mas">
+    <ion-button expand="full"
+                class="btn-mas"
+                size="large"
+                (click)="onClick()">
+      <ion-icon name="add"
+                slot="icon-only"></ion-icon>
+    </ion-button>
+  </swiper-slide >
+
+</swiper-container>

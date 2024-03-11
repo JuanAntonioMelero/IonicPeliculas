@@ -6,12 +6,11 @@
       <img [src]="pelicula.backdrop_path | imagen">
     </ion-card>
 
-
   </ion-slide>
 </ion-slides> -->
 <swiper-container>
   <swiper-slide *ngFor="let slide of peliculas">
-    <ion-card mode="ios">
+    <ion-card mode="ios" (click)="verDetalle(slide.id)">
       <img [src]="slide.poster_path | imagen" class="slide-image" />
 
       <ion-card-header>

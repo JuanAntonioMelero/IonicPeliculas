@@ -33,16 +33,11 @@ export class MoviesService {
     const query = `/discover/movie?sort_by=popularity.desc&page=${ this.popularesPage }`;
 
     return this.ejecutarQuery<RespuestaMDB>(query);
-
   }
-
   buscarPeliculas( texto: string ) {
-    return this.ejecutarQuery(`/search/movie?query=${ texto }`);
+    return this.ejecutarQuery<RespuestaMDB>(`/search/movie?query=${ texto }`);
 
   }
-
-
-
   getFeature() {
 
     const hoy = new Date();
@@ -56,7 +51,6 @@ export class MoviesService {
     } else {
       mesString = mes;
     }
-
 
     const inicio = `${ hoy.getFullYear() }-${ mesString }-01`;
     const fin    = `${ hoy.getFullYear() }-${ mesString }-${ ultimoDia }`;
