@@ -27,7 +27,13 @@
 </ion-slides> -->
 
 <swiper-container
+[spaceBetween]="20"
+[slidesPerView]="1.2"
+    [initialSlide]="1"
+    [centeredSlides]="true"
+    [autoplay]="true"
 
+[pagination]="{clickable: true, dynamicBullets: true}"
 >
 
     <swiper-slide *ngFor="let slide of peliculas">

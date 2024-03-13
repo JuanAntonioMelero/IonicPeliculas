@@ -8,15 +8,17 @@ import { Tab3PageRoutingModule } from './tab3-routing.module';
 
 import { Tab3Page } from './tab3.page';
 import { ComponentsModule } from '../components/components.module';
+import { PipesModule } from "../pipes/pipes.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    Tab3PageRoutingModule,
-    ComponentsModule
-  ],
-  declarations: [Tab3Page]
+    declarations: [Tab3Page],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        Tab3PageRoutingModule,
+        ComponentsModule,
+        PipesModule
+    ]
 })
 export class Tab3PageModule {}

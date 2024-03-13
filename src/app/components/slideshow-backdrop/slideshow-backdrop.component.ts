@@ -11,10 +11,7 @@ import { DetalleComponent } from '../detalle/detalle.component';
 export class SlideshowBackdropComponent  implements OnInit {
   @Input() peliculas: Pelicula[] = [];
 
-  slideOpts = {
-    slidesPerView: 1.3,
-    freeMode: true
-  };
+
   constructor(private modalCtrl: ModalController ) { }
 
   ngOnInit() {}

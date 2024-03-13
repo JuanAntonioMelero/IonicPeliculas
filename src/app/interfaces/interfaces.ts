@@ -6,6 +6,10 @@ export interface RespuestaMDB {
   total_pages: number;
   results: Pelicula[];
 }
+export interface RespuestaGenre {
+
+  results: Genre[];
+}
 
 export interface Pelicula {
   vote_count: number;
@@ -23,7 +27,6 @@ export interface Pelicula {
   overview: string;
   release_date: string;
 }
-
 export interface PeliculaDetalle {
   adult?: boolean;
   backdrop_path?: string;
